@@ -1,6 +1,10 @@
-import { use, useState } from "react";
-import SearchBar from "./components/SearchBar";
+import { useState } from "react";
+import SearchBar from "./components/SearchBar/SearchBar";
 import { useWeather } from "./hooks/useWeather";
+import WeatherCard from "./components/WeatherCard/WeatherCard";
+import "./App.css";
+import Spinner from "./components/Spinner/Spinner";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 
 function App() {
   const [city, setCity] = useState<string>("");
@@ -8,22 +12,21 @@ function App() {
   const { data: weather, isLoading, error } = useWeather(city);
 
   return (
-    <div>
-      <h1>Weather App</h1>
+    <div className="app">
+      <header className="app-header">
+        <h1 className="app-title">Weather App</h1>
 
-      <SearchBar onSearch={setCity} />
-      {isLoading && <p>Loading weather...</p>}
-      {error && <p style={{ color: "red" }}>Error loading weather data.</p>}
+        <SearchBar onSearch={setCity} hasError={!!error} />
+      </header>
 
-      {weather && (
-        <div style={{ marginTop: "20px" }}>
-          <h2>{weather.city}</h2>
-          <p>Temperature: {weather.temperature}°C</p>
-          <p>Wind: {weather.windSpeed} km/h</p>
-          <p>Humidity: {weather.humidity}%</p>
-          <p>{weather.description}</p>
-        </div>
-      )}
+      <div className="content">
+        {isLoading && <Spinner />}
+        {error && (
+          <ErrorMessage message={(error as Error).message} />
+        )}
+        
+        {weather && <WeatherCard weather={weather} />}
+      </div>
     </div>
   );
 }

@@ -6,5 +6,6 @@ export function useWeather(city: string) {
     queryKey: ["weather", city],
     queryFn: () => getWeather(city),
     enabled: !!city,
+    retry: false,
   });
 }
