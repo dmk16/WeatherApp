@@ -12,14 +12,17 @@ export default function SearchBar({ onSearch, hasError }: SearchBarProps) {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (!value.trim()) return;
-    
+
     onSearch(value);
     setValue("");
-  }
+  };
 
   return (
     <>
-      <form className={`search-bar ${hasError ? "error" : ""}`} onSubmit={handleSearch}>
+      <form
+        className={`search-bar ${hasError ? "error" : ""}`}
+        onSubmit={handleSearch}
+      >
         <input
           type="text"
           placeholder="Enter city..."

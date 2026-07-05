@@ -58,3 +58,22 @@
   font-size: 14px;
   color: #333;
 }
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  display: block;
+
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
