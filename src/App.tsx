@@ -21,10 +21,8 @@ function App() {
 
       <div className="content">
         {isLoading && <Spinner />}
-        {error && (
-          <ErrorMessage message={(error as Error).message} />
-        )}
-        
+        {error && <ErrorMessage message={(error as Error).message} />}
+
         {weather && <WeatherCard weather={weather} />}
       </div>
     </div>

@@ -5,7 +5,7 @@ console.log("API KEY:", API_KEY);
 
 export async function getWeather(city: string): Promise<Weather> {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`,
   );
 
   if (!response.ok) {
@@ -23,5 +23,6 @@ export async function getWeather(city: string): Promise<Weather> {
     windSpeed: data.wind.speed,
     humidity: data.main.humidity,
     description: data.weather[0].description,
+    icon: data.weather[0].icon,
   };
 }

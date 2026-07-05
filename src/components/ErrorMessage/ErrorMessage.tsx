@@ -5,9 +5,5 @@ type Props = {
 };
 
 export default function ErrorMessage({ message }: Props) {
-  return (
-    <div className="error-message">
-      {message}
-    </div>
-  );
+  return <div className="error-message">{message}</div>;
 }

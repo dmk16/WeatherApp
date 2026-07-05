@@ -15,6 +15,7 @@ export function getMockWeather(city: string): Promise<Weather> {
         windSpeed: Math.round(Math.random() * 15),
         humidity: Math.round(40 + Math.random() * 50),
         description: "Cloudy",
+        icon: "☁️",
       });
     }, 800);
   });
