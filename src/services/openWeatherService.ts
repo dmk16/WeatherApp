@@ -9,7 +9,10 @@ export async function getWeather(city: string): Promise<Weather> {
   );
 
   if (!response.ok) {
-    throw new Error("City not found");
+    if (response.status === 404) {
+      throw new Error("City not found");
+    }
+    throw new Error("Unable to fetch weather data");
   }
 
   const data = await response.json();
