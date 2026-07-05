@@ -1,43 +1,19 @@
 import { use, useState } from "react";
 import SearchBar from "./components/SearchBar";
-import { getMockWeather } from "./services/mockWeatherService";
-import { getWeather } from "./services/openWeatherService";
-import type { Weather } from "./models/Weather";
+import { useWeather } from "./hooks/useWeather";
 
 function App() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [weather, setWeather] = useState<Weather | null>(null);
-  
-  const handleSearch = async (city: string) => {
-    setWeather(null);
-    setLoading(true);
-    setError(null);
-    
-    console.log("SEARCH START");
+  const [city, setCity] = useState<string>("");
 
-    try{
-      console.log("BEFORE API CALL");
-      const weatherData = await getWeather(city);
-      setWeather(weatherData);
-      console.log(weatherData);
+  const { data: weather, isLoading, error } = useWeather(city);
 
-    }
-    catch(err) {
-      setError("Unable to load data.");
-    }
-    finally{
-      setLoading(false);
-    }
-  };
-  
   return (
     <div>
       <h1>Weather App</h1>
 
-      <SearchBar onSearch={handleSearch}/>
-      {loading && <p>Loading weather...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      <SearchBar onSearch={setCity} />
+      {isLoading && <p>Loading weather...</p>}
+      {error && <p style={{ color: "red" }}>Error loading weather data.</p>}
 
       {weather && (
         <div style={{ marginTop: "20px" }}>
