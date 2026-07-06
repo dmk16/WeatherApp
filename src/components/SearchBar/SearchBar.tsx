@@ -25,7 +25,7 @@ export default function SearchBar({ onSearch, hasError }: SearchBarProps) {
       >
         <input
           type="text"
-          placeholder="Enter city..."
+          placeholder="Search for a city..."
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />

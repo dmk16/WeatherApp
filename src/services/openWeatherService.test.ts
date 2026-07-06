@@ -40,7 +40,9 @@ describe("getWeather", () => {
       status: 404,
     } as Response);
 
-    await expect(getCurrentWeather("FakeCity")).rejects.toThrow("City not found");
+    await expect(getCurrentWeather("FakeCity")).rejects.toThrow(
+      "City not found",
+    );
   });
 
   it("throws 'Unable to fetch weather data' on non-404 error", async () => {

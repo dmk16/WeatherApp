@@ -41,7 +41,7 @@ export async function getWeatherForecast(city: string): Promise<Forecast> {
     throw new Error("Unable to fetch forecast data");
   }
   const data = await response.json();
-  
+
   const entries: ForecastEntry[] = data.list.map((item: any) => ({
     time: item.dt,
     temperature: item.main.temp,

@@ -1,4 +1,4 @@
-import type {ForecastDay, ForecastEntry} from "../models/Forecast";
+import type { ForecastDay, ForecastEntry } from "../models/Forecast";
 
 export function groupForecastByDay(entries: ForecastEntry[]): ForecastDay[] {
   const grouped: Record<string, ForecastEntry[]> = {};

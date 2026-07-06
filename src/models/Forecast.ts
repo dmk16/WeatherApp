@@ -5,12 +5,12 @@ export interface ForecastEntry {
   humidity: number;
   icon: string;
   chanceOfRain: number;
-  description: string; 
+  description: string;
 }
 
 export interface ForecastDay {
-    date: string;
-    entries: ForecastEntry[];
+  date: string;
+  entries: ForecastEntry[];
 }
 
 export interface Forecast {

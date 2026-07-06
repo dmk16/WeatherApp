@@ -8,7 +8,7 @@ describe("SearchBar", () => {
 
     render(<SearchBar onSearch={mockOnSearch} />);
 
-    fireEvent.change(screen.getByPlaceholderText("Enter city..."), {
+    fireEvent.change(screen.getByPlaceholderText("Search for a city..."), {
       target: { value: "London" },
     });
 

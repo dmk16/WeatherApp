@@ -12,28 +12,40 @@ function App() {
   const [city, setCity] = useState<string>("");
 
   const { data: weather, isLoading, error } = useWeather(city);
-  const { data: forecast, isLoading: forecastLoading, error: forecastError } = useForecast(city);
+  const {
+    data: forecast,
+    isLoading: forecastLoading,
+    error: forecastError,
+  } = useForecast(city);
 
   console.log("Forecast data:", forecast);
   return (
     <div className="app">
-      <header className="app-header">
-        <h1 className="app-title">Weather App</h1>
+      <div className="page">
+        <header className="app-header">
+          <div className="app-title-container">
+            <h1 className="app-title">Weather</h1>
+            <p className="app-subtitle">
+              Get the current weather conditions and 5-day forecast for any
+              city.
+            </p>
+          </div>
+          <SearchBar onSearch={setCity} hasError={!!error} />
+        </header>
 
-        <SearchBar onSearch={setCity} hasError={!!error} />
-      </header>
+        <main>
+          <div className="content">
+            {(isLoading || forecastLoading) && <Spinner />}
+            {(error || forecastError) && (
+              <ErrorMessage
+                message={((error || forecastError) as Error).message}
+              />
+            )}
 
-      <div className="content">
-        {(isLoading || forecastLoading) && <Spinner />}
-        {(error || forecastError) && (
-          <ErrorMessage
-            message={((error || forecastError) as Error).message}
-          />
-        )}
-
-        {weather && <WeatherCard weather={weather} />}
-        {forecast && <Forecast forecast={forecast} />}
-
+            {weather && <WeatherCard weather={weather} />}
+            {forecast && <Forecast forecast={forecast} />}
+          </div>
+        </main>
       </div>
     </div>
   );

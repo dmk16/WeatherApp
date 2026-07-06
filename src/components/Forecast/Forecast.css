@@ -1,0 +1,93 @@
+.forecast {
+  margin-top: 2rem;
+}
+
+.forecast h2 {
+  margin-bottom: 1rem;
+}
+
+.forecast-days {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.forecast-days button {
+  background: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+
+  cursor: pointer;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.forecast-days button:hover {
+  background: #e3f2fd;
+}
+
+.forecast-days button.active {
+  background: #1565c0;
+  color: white;
+
+  box-shadow: 0 4px 12px rgba(21, 101, 192, 0.3);
+}
+
+.hourly-forecast {
+  display: flex;
+  gap: 1rem;
+
+  overflow-x: auto;
+
+  padding-bottom: 1rem;
+}
+
+.hourly-entry {
+  min-width: 140px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 1rem;
+
+  text-align: center;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+
+  flex-shrink: 0;
+}
+
+.time {
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.temperature {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: .5rem 0;
+}
+
+.hourly-entry p {
+  margin: 0.35rem 0;
+}
+
+.hourly-entry .weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.detail {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  gap: 0.35rem;
+  margin: 0.25rem 0;
+}
