@@ -49,44 +49,54 @@
 }
 
 .hourly-entry {
-  min-width: 140px;
+  min-width: 155px;
 
   background: white;
 
   border-radius: 16px;
 
-  padding: 1rem;
+  padding: 1.25rem;
 
   text-align: center;
 
-  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 
   flex-shrink: 0;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.time {
+.hourly-entry:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.forecast-time {
+  font-size: 1.1rem;
+  color: #6b7280;
   font-weight: 600;
-  margin-bottom: .5rem;
 }
 
-.temperature {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin: .5rem 0;
+.forecast-temperature {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .hourly-entry p {
   margin: 0.35rem 0;
+  min-width:120px;
 }
 
-.hourly-entry .weather-icon {
-  width: 64px;
-  height: 64px;
+.hourly-entry .forecast-icon {
+  width: 72px;
+  height: 72px;
 }
 
-.detail {
+.forecast-detail {
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: left;
   gap: 0.35rem;
   margin: 0.25rem 0;
