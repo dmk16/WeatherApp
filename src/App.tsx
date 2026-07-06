@@ -26,7 +26,7 @@ function App() {
           <div className="app-title-container">
             <h1 className="app-title">Weather</h1>
             <p className="app-subtitle">
-              Get the current weather conditions and 5-day forecast for any
+              Get the current weather conditions and 5-day / 3-hour forecast for any
               city.
             </p>
           </div>

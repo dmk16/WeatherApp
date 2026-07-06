@@ -13,7 +13,7 @@ export default function WeatherCard({ weather }: WeatherCardProps) {
     <section className="weather-banner">
       <div className="weather-main">
         <div className="weather-info">
-          <h2 className="city">{weather.city}</h2>
+          <div className="city">{weather.city}</div>
 
           <div className="temperature">
             {Math.round(weather.temperature)}°C
@@ -36,7 +36,7 @@ export default function WeatherCard({ weather }: WeatherCardProps) {
           <span>💨</span>
           <div>
             <p>Wind</p>
-            <strong>{weather.windSpeed} m/s</strong>
+            <strong>{Math.round(weather.windSpeed)} m/s</strong>
           </div>
         </div>
 
@@ -44,7 +44,7 @@ export default function WeatherCard({ weather }: WeatherCardProps) {
           <span>💧</span>
           <div>
             <p>Humidity</p>
-            <strong>{weather.humidity}%</strong>
+            <strong>{Math.round(weather.humidity)}%</strong>
           </div>
         </div>
       </div>
