@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1783373517121" clover="3.2.0">
+  <project timestamp="1783373517121" name="All files">
+    <metrics statements="54" coveredstatements="45" conditionals="28" coveredconditionals="23" methods="22" coveredmethods="20" elements="104" coveredelements="88" complexity="0" loc="54" ncloc="54" packages="10" files="17" classes="17"/>
+    <package name="src">
+      <metrics statements="5" coveredstatements="5" conditionals="12" coveredconditionals="11" methods="1" coveredmethods="1"/>
+      <file name="App.css" path="C:\Users\devee\WeatherApp\weather-app\src\App.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="App.tsx" path="C:\Users\devee\WeatherApp\weather-app\src\App.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="12" coveredconditionals="11" methods="1" coveredmethods="1"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.ErrorMessage">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ErrorMessage.css" path="C:\Users\devee\WeatherApp\weather-app\src\components\ErrorMessage\ErrorMessage.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ErrorMessage.tsx" path="C:\Users\devee\WeatherApp\weather-app\src\components\ErrorMessage\ErrorMessage.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Forecast">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <file name="Forecast.css" path="C:\Users\devee\WeatherApp\weather-app\src\components\Forecast\Forecast.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Forecast.tsx" path="C:\Users\devee\WeatherApp\weather-app\src\components\Forecast\Forecast.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.SearchBar">
+      <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="SearchBar.css" path="C:\Users\devee\WeatherApp\weather-app\src\components\SearchBar\SearchBar.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="SearchBar.tsx" path="C:\Users\devee\WeatherApp\weather-app\src\components\SearchBar\SearchBar.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Spinner">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Spinner.css" path="C:\Users\devee\WeatherApp\weather-app\src\components\Spinner\Spinner.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Spinner.tsx" path="C:\Users\devee\WeatherApp\weather-app\src\components\Spinner\Spinner.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.WeatherCard">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="WeatherCard.css" path="C:\Users\devee\WeatherApp\weather-app\src\components\WeatherCard\WeatherCard.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="WeatherCard.tsx" path="C:\Users\devee\WeatherApp\weather-app\src\components\WeatherCard\WeatherCard.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.hooks">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="useForecast.ts" path="C:\Users\devee\WeatherApp\weather-app\src\hooks\useForecast.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="useWeather.ts" path="C:\Users\devee\WeatherApp\weather-app\src\hooks\useWeather.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.services">
+      <metrics statements="18" coveredstatements="9" conditionals="8" coveredconditionals="4" methods="3" coveredmethods="1"/>
+      <file name="openWeatherService.ts" path="C:\Users\devee\WeatherApp\weather-app\src\services\openWeatherService.ts">
+        <metrics statements="18" coveredstatements="9" conditionals="8" coveredconditionals="4" methods="3" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="13" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.test">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="render.tsx" path="C:\Users\devee\WeatherApp\weather-app\src\test\render.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="groupForecastByDay.ts" path="C:\Users\devee\WeatherApp\weather-app\src\utils\groupForecastByDay.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

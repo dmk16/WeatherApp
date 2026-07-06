@@ -17,9 +17,43 @@ describe("Weather App Integration", () => {
       icon: "01d",
     });
 
+    vi.mocked(api.getWeatherForecast).mockResolvedValue({
+      city: "London",
+      days: [
+        {
+          date: "2026-07-06",
+          entries: [
+            {
+              time: 1783328400,
+              temperature: 30,
+              windSpeed: 10,
+              humidity: 50,
+              chanceOfRain: 10,
+              icon: "01d",
+              description: "clear sky",
+            },
+          ],
+        },
+        {
+          date: "2026-07-07",
+          entries: [
+            {
+              time: 1783414800,
+              temperature: 25,
+              windSpeed: 8,
+              humidity: 40,
+              chanceOfRain: 30,
+              icon: "02d",
+              description: "few clouds",
+            },
+          ],
+        },
+      ],
+    });
+
     renderWithProviders(<App />);
 
-    fireEvent.change(screen.getByPlaceholderText("Enter city..."), {
+    fireEvent.change(screen.getByPlaceholderText("Search for a city..."), {
       target: { value: "London" },
     });
 
@@ -27,12 +61,27 @@ describe("Weather App Integration", () => {
 
     expect(await screen.findByText("London")).toBeInTheDocument();
     expect(await screen.findByText("20°C")).toBeInTheDocument();
-    expect(await screen.findByText("clear sky")).toBeInTheDocument();
+    expect(await screen.findByText("Clear sky")).toBeInTheDocument();
+
+    expect(
+      await screen.findByRole("heading", { name: /5 day forecast/i }),
+    ).toBeInTheDocument();
+
+    expect(screen.getByRole("button", { name: /Mon/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Tue/i })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /Tue/i }));
+
+    expect(await screen.findByText("25°C")).toBeInTheDocument();
   });
 
   it("displays an error message when the weather request fails", async () => {
     vi.mocked(api.getCurrentWeather).mockRejectedValue(
       new Error("City not found"),
+    );
+
+    vi.mocked(api.getWeatherForecast).mockRejectedValue(
+      new Error("City not found")
     );
 
     renderWithProviders(<App />);
