@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { getWeather } from "./openWeatherService";
+import { getCurrentWeather } from "./openWeatherService";
 
 describe("getWeather", () => {
   beforeEach(() => {
@@ -20,7 +20,7 @@ describe("getWeather", () => {
       }),
     } as Response);
 
-    const result = await getWeather("London");
+    const result = await getCurrentWeather("London");
 
     expect(result).toEqual({
       city: "London",
@@ -40,7 +40,7 @@ describe("getWeather", () => {
       status: 404,
     } as Response);
 
-    await expect(getWeather("FakeCity")).rejects.toThrow("City not found");
+    await expect(getCurrentWeather("FakeCity")).rejects.toThrow("City not found");
   });
 
   it("throws 'Unable to fetch weather data' on non-404 error", async () => {
@@ -51,7 +51,7 @@ describe("getWeather", () => {
       status: 500,
     } as Response);
 
-    await expect(getWeather("London")).rejects.toThrow(
+    await expect(getCurrentWeather("London")).rejects.toThrow(
       "Unable to fetch weather data",
     );
   });

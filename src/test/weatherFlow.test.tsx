@@ -8,7 +8,7 @@ vi.mock("../services/openWeatherService");
 
 describe("Weather App Integration", () => {
   it("searches for a city and displays weather data", async () => {
-    vi.mocked(api.getWeather).mockResolvedValue({
+    vi.mocked(api.getCurrentWeather).mockResolvedValue({
       city: "London",
       temperature: 20,
       windSpeed: 10,
@@ -31,7 +31,7 @@ describe("Weather App Integration", () => {
   });
 
   it("displays an error message when the weather request fails", async () => {
-    vi.mocked(api.getWeather).mockRejectedValue(new Error("City not found"));
+    vi.mocked(api.getCurrentWeather).mockRejectedValue(new Error("City not found"));
 
     renderWithProviders(<App />);
 
