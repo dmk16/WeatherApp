@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import App from "../App";
 import * as api from "../services/openWeatherService";
-import {renderWithProviders} from "./render";
+import { renderWithProviders } from "./render";
 
 vi.mock("../services/openWeatherService");
 
@@ -31,11 +31,13 @@ describe("Weather App Integration", () => {
   });
 
   it("displays an error message when the weather request fails", async () => {
-    vi.mocked(api.getCurrentWeather).mockRejectedValue(new Error("City not found"));
+    vi.mocked(api.getCurrentWeather).mockRejectedValue(
+      new Error("City not found"),
+    );
 
     renderWithProviders(<App />);
 
-    fireEvent.change(screen.getByPlaceholderText("Enter city..."), {
+    fireEvent.change(screen.getByPlaceholderText("Search for a city..."), {
       target: { value: "FakeCity" },
     });
 

@@ -1,27 +1,31 @@
 .app {
   min-height: 100vh;
-  padding: 40px 16px;
+  background: linear-gradient(
+    180deg,
+    #90caf9 0%,
+    #e3f2fd 70%,
+    #ffffff 100%
+  );
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #e3f2fd, #ffffff);
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
 }
 
 .app-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
-.content {
-  max-width: 400px;
-  margin: 0 auto;
+.app-title {
+  margin: 0;
+  font-size: 3rem;
+  color: #1565c0;
 }
 
-.title {
-  font-size: 32px;
-  margin-bottom: 16px;
-  color: #1e88e5;
-  letter-spacing: 1px;
+.app-subtitle {
+  margin: 0.5rem 0 1.5rem;
+  color: #5f6b7a;
 }

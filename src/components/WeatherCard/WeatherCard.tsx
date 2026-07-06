@@ -6,21 +6,32 @@ type WeatherCardProps = {
 };
 
 export default function WeatherCard({ weather }: WeatherCardProps) {
+  const description = weather.description.charAt(0).toUpperCase() +
+  weather.description.slice(1);
+  
   return (
-    <div className="weather-card">
-      <h2 className="city">{weather.city}</h2>
+    <section className="weather-banner">
+      <div className="weather-main">
+        <div className="weather-info">
+          <h2 className="city">{weather.city}</h2>
 
-      <img
-        className="weather-icon"
-        src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-        alt={weather.description}
-      />
+          <div className="temperature">
+            {Math.round(weather.temperature)}°C
+          </div>
 
-      <div className="temperature">{Math.round(weather.temperature)}°C</div>
+          <p className="description">
+            {description}
+          </p>
+        </div>
 
-      <p className="description">{weather.description}</p>
+        <img
+          className="weather-icon"
+          src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+          alt={weather.description}
+        />
+      </div>
 
-      <div className="details">
+      <div className="weather-details">
         <div className="detail-item">
           <span>💨</span>
           <div>
@@ -37,6 +48,6 @@ export default function WeatherCard({ weather }: WeatherCardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
