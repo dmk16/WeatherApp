@@ -45,12 +45,25 @@ describe("getWeather", () => {
     );
   });
 
-  it("throws 'Unable to fetch weather data' on non-404 error", async () => {
+  it("throws 'Weather service is currently unavailable' on non-404, >= 500 error", async () => {
     const mockFetch = vi.mocked(fetch);
 
     mockFetch.mockResolvedValue({
       ok: false,
       status: 500,
+    } as Response);
+
+    await expect(getCurrentWeather("London")).rejects.toThrow(
+      "Weather service is currently unavailable",
+    );
+  });
+
+  it("throws 'Unable to fetch weather data' on non-404, <500 error", async () => {
+    const mockFetch = vi.mocked(fetch);
+
+    mockFetch.mockResolvedValue({
+      ok: false,
+      status: 403,
     } as Response);
 
     await expect(getCurrentWeather("London")).rejects.toThrow(

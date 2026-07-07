@@ -1,20 +1,18 @@
+/* App shell */
 .app {
   min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    #90caf9 0%,
-    #e3f2fd 70%,
-    #ffffff 100%
-  );
+  background: linear-gradient(180deg, #90caf9 0%, #e3f2fd 70%, #ffffff 100%);
   font-family: Arial, sans-serif;
 }
 
+/* Page layout */
 .page {
   max-width: 1100px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
+/* Header and intro text */
 .app-header {
   margin-bottom: 2rem;
 }
@@ -28,4 +26,92 @@
 .app-subtitle {
   margin: 0.5rem 0 1.5rem;
   color: #5f6b7a;
+}
+
+/* Tablet adjustments */
+@media (max-width: 900px) {
+  .page {
+    padding: 0 1rem;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 2.5rem;
+    padding-top: 1rem;
+  }
+
+  .app-subtitle {
+    text-align: left;
+    font-size: 0.95rem;
+    margin: 0.5rem 0 0;
+  }
+
+  .search-bar {
+    margin-top: 0.5rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar button {
+    width: 100%;
+  }
+
+  .weather-banner {
+    padding: 1.5rem;
+  }
+
+  .weather-main {
+    min-height: auto;
+  }
+
+  .city {
+    font-size: 2rem;
+  }
+
+  .temperature {
+    font-size: 3.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .weather-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .weather-details {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    gap: 1.5rem;
+  }
+}
+
+
+.empty-state {
+  margin: 4rem auto;
+  max-width: 420px;
+  text-align: center;
+  color: #4b5563;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h2 {
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.empty-state p {
+  line-height: 1.6;
 }

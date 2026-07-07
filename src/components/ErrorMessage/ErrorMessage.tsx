@@ -5,5 +5,13 @@ type Props = {
 };
 
 export default function ErrorMessage({ message }: Props) {
-  return <div className="error-message">{message}</div>;
+  const [title, ...rest] = message.split(". ");
+
+  return (
+    <div className="error-message" role="alert">
+      <div className="error-icon">⚠️</div>
+      <h3>{title}</h3>
+      {rest.length > 0 && <p>{rest.join(". ")}</p>}
+    </div>
+  );
 }

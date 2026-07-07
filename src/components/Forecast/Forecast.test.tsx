@@ -43,7 +43,7 @@ describe("Forecast", () => {
     render(<Forecast forecast={mockForecast} />);
 
     expect(
-      screen.getByRole("heading", { name: /5 day forecast/i })
+      screen.getByRole("heading", { name: /5-day forecast/i })
     ).toBeInTheDocument();
 
     expect(screen.getByRole("button", { name: /Mon/i })).toBeInTheDocument();

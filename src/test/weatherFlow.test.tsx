@@ -64,7 +64,7 @@ describe("Weather App Integration", () => {
     expect(await screen.findByText("Clear sky")).toBeInTheDocument();
 
     expect(
-      await screen.findByRole("heading", { name: /5 day forecast/i }),
+      await screen.findByRole("heading", { name: /5-day forecast/i }),
     ).toBeInTheDocument();
 
     expect(screen.getByRole("button", { name: /Mon/i })).toBeInTheDocument();

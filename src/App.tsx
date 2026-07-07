@@ -18,7 +18,6 @@ function App() {
     error: forecastError,
   } = useForecast(city);
 
-  console.log("Forecast data:", forecast);
   return (
     <div className="app">
       <div className="page">
@@ -26,8 +25,7 @@ function App() {
           <div className="app-title-container">
             <h1 className="app-title">Weather</h1>
             <p className="app-subtitle">
-              Get the current weather conditions and 5-day / 3-hour forecast for any
-              city.
+              Check the current conditions and a 5-day forecast for any city.
             </p>
           </div>
           <SearchBar onSearch={setCity} hasError={!!error} />
@@ -35,15 +33,28 @@ function App() {
 
         <main>
           <div className="content">
-            {(isLoading || forecastLoading) && <Spinner />}
-            {(error || forecastError) && (
+            {!city && (
+              <div className="empty-state">
+                <div className="empty-icon">🌤️</div>
+                <h2>Search for a city</h2>
+                <p>
+                  Enter a city above to view the current weather and 5-day
+                  forecast.
+                </p>
+              </div>
+            )}
+            {isLoading || forecastLoading ? (
+              <Spinner />
+            ) : error || forecastError ? (
               <ErrorMessage
                 message={((error || forecastError) as Error).message}
               />
+            ) : (
+              <>
+                {weather && <WeatherCard weather={weather} />}
+                {forecast && <Forecast forecast={forecast} />}
+              </>
             )}
-
-            {weather && <WeatherCard weather={weather} />}
-            {forecast && <Forecast forecast={forecast} />}
           </div>
         </main>
       </div>

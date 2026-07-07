@@ -1,5 +1,6 @@
 .forecast {
   margin-top: 2rem;
+  /* overflow: hidden; */
 }
 
 .forecast h2 {
@@ -12,6 +13,8 @@
   margin-bottom: 2rem;
   overflow-x: auto;
   padding-bottom: 0.5rem;
+  padding: 8px 0px 8px;
+  scrollbar-width: none;
 }
 
 .forecast-days button {
@@ -26,6 +29,14 @@
   font-weight: 600;
 
   transition: all 0.2s ease;
+
+  white-space: nowrap;
+  flex-shrink: 0;
+  -ms-overflow-style: none;
+}
+
+.forecast-days::-webkit-scrollbar {
+  display: none;
 }
 
 .forecast-days button:hover {
@@ -64,6 +75,7 @@
   flex-shrink: 0;
   transition:
     transform 0.2s ease,
+    opacity 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -86,7 +98,6 @@
 
 .hourly-entry p {
   margin: 0.35rem 0;
-  min-width:120px;
 }
 
 .hourly-entry .forecast-icon {
@@ -97,7 +108,13 @@
 .forecast-detail {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   gap: 0.35rem;
   margin: 0.25rem 0;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #1565c0;
+  outline-offset: 3px;
 }
