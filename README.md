@@ -1,73 +1,106 @@
-# React + TypeScript + Vite
+# Weather Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive weather dashboard built with React, TypeScript and Vite that displays current weather conditions and a 5-day forecast in 3-hour intervals for any city using the OpenWeather API.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://weather-dashboard.vercel.app
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Search weather by city
+- Current weather banner
+- 5-day forecast with 3-hour intervals
+- Responsive design for mobile, tablet and desktop
+- Loading indicators
+- User-friendly error handling
+- Accessibility score of 100 (Lighthouse)
+- Unit and integration tests
+- API caching with React Query
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Desktop
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+*(Add a screenshot here)*
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Mobile
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+*(Add a screenshot here)*
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite
+- TanStack React Query
+- OpenWeather API
+- Vitest
+- React Testing Library
+- CSS
+
+## Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/dmk16/WeatherApp.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Install dependencies
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm install
 ```
+
+### Create a `.env` file
+
+```env
+VITE_OPENWEATHER_API_KEY=your_api_key
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+## Running Tests
+
+```bash
+npm test
+```
+
+## Project Structure
+
+```text
+src/
+├── components/
+├── hooks/
+├── models/
+├── services/
+├── test/
+└── utils/
+```
+
+## Accessibility
+
+This application was built with accessibility in mind, including:
+
+- Semantic HTML
+- Keyboard navigation
+- Screen reader labels
+- Visible focus states
+- Lighthouse Accessibility score: **100**
+
+## Future Improvements
+
+- Use the user's current location
+- Save favourite cities
+- Search auto-complete suggestions
+- Dark mode
+- Interactive weather maps
+
+## Author
+
+Deveena Kalaria
