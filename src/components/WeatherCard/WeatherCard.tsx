@@ -6,22 +6,18 @@ type WeatherCardProps = {
 };
 
 export default function WeatherCard({ weather }: WeatherCardProps) {
-  const description = weather.description.charAt(0).toUpperCase() +
-  weather.description.slice(1);
-  
+  const description =
+    weather.description.charAt(0).toUpperCase() + weather.description.slice(1);
+
   return (
     <section className="weather-banner">
       <div className="weather-main">
         <div className="weather-info">
           <div className="city">{weather.city}</div>
 
-          <div className="temperature">
-            {Math.round(weather.temperature)}°C
-          </div>
+          <div className="temperature">{Math.round(weather.temperature)}°C</div>
 
-          <p className="description">
-            {description}
-          </p>
+          <p className="description">{description}</p>
         </div>
 
         <img

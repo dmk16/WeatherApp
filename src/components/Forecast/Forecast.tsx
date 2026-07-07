@@ -37,17 +37,21 @@ export default function Forecast({ forecast }: ForecastProps) {
         {currentDay.entries.map((entry) => (
           <div className="hourly-entry" key={entry.time}>
             <p className="forecast-time">
-              {new Date(entry.time * 1000).toLocaleTimeString([], {
-                hour: "numeric",
-                hour12: true,
-              }).toUpperCase()}
+              {new Date(entry.time * 1000)
+                .toLocaleTimeString([], {
+                  hour: "numeric",
+                  hour12: true,
+                })
+                .toUpperCase()}
             </p>
             <img
               className="forecast-icon"
               src={`https://openweathermap.org/img/wn/${entry.icon}@2x.png`}
               alt={entry.description}
             />
-            <div className="forecast-temperature">{Math.round(entry.temperature)}°C</div>
+            <div className="forecast-temperature">
+              {Math.round(entry.temperature)}°C
+            </div>
             <div className="forecast-detail">
               <span>💨</span>
               <span>{Math.round(entry.windSpeed)} m/s</span>
