@@ -22,6 +22,7 @@ export default function Forecast({ forecast }: ForecastProps) {
             }
             key={day.date}
             onClick={() => setSelectedDay(index)}
+            aria-pressed={selectedDay == index}
           >
             {new Date(day.date).toLocaleDateString("en-GB", {
               weekday: "short",
