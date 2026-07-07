@@ -28,7 +28,7 @@ function App() {
               Check the current conditions and a 5-day forecast for any city.
             </p>
           </div>
-          <SearchBar onSearch={setCity} hasError={!!error} />
+          <SearchBar onSearch={setCity} />
         </header>
 
         <main>

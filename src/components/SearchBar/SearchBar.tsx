@@ -3,10 +3,9 @@ import "./SearchBar.css";
 
 interface SearchBarProps {
   onSearch: (city: string) => void;
-  hasError?: boolean;
 }
 
-export default function SearchBar({ onSearch, hasError }: SearchBarProps) {
+export default function SearchBar({ onSearch }: SearchBarProps) {
   const [value, setValue] = useState("");
 
   const handleSearch = (e: React.FormEvent) => {
@@ -19,10 +18,7 @@ export default function SearchBar({ onSearch, hasError }: SearchBarProps) {
 
   return (
     <>
-      <form
-        className={`search-bar ${hasError ? "error" : ""}`}
-        onSubmit={handleSearch}
-      >
+      <form className="search-bar" onSubmit={handleSearch}>
         <label htmlFor="city-search" className="visually-hidden">
           Search for a city
         </label>
@@ -33,7 +29,9 @@ export default function SearchBar({ onSearch, hasError }: SearchBarProps) {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <button type="submit" aria-label="Search for weather">Search</button>
+        <button type="submit" aria-label="Search for weather">
+          Search
+        </button>
       </form>
     </>
   );
