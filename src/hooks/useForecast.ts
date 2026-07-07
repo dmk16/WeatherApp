@@ -7,5 +7,7 @@ export function useForecast(city: string) {
     queryFn: () => getWeatherForecast(city),
     enabled: !!city,
     retry: false,
+    staleTime: 1000 * 60 * 10,
+    gcTime: 1000 * 60 * 30,
   });
 }
