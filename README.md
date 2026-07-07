@@ -14,7 +14,7 @@ https://weather-dashboard.vercel.app
 - Responsive design for mobile, tablet and desktop
 - Loading indicators
 - User-friendly error handling
-- Accessibility score of 100 (Lighthouse)
+- Accessibility considerations
 - Unit and integration tests
 - API caching with React Query
 
