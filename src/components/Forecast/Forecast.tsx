@@ -12,7 +12,7 @@ export default function Forecast({ forecast }: ForecastProps) {
 
   return (
     <div className="forecast">
-      <h2>5 Day Forecast</h2>
+      <h2>5-day forecast</h2>
 
       <div className="forecast-days">
         {forecast.days.map((day, index) => (
@@ -61,7 +61,6 @@ export default function Forecast({ forecast }: ForecastProps) {
               <span>🌧️</span>
               <span>{Math.round(entry.chanceOfRain)}%</span>
             </div>
-            {/* <p className="description">{entry.description.charAt(0).toUpperCase() + entry.description.slice(1)}</p> */}
           </div>
         ))}
       </div>

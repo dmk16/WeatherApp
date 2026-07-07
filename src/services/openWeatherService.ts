@@ -12,8 +12,13 @@ export async function getCurrentWeather(city: string): Promise<Weather> {
 
   if (!response.ok) {
     if (response.status === 404) {
-      throw new Error("City not found");
+      throw new Error("City not found. Please check the city name and try again.");
     }
+
+    if (response.status >= 500) {
+      throw new Error ("Weather service is currently unavailable. Please try again later.");
+    } 
+
     throw new Error("Unable to fetch weather data");
   }
 
@@ -30,6 +35,8 @@ export async function getCurrentWeather(city: string): Promise<Weather> {
 }
 
 export async function getWeatherForecast(city: string): Promise<Forecast> {
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
+
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`,
   );

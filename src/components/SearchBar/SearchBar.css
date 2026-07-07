@@ -42,3 +42,9 @@
 .search-bar button:hover {
   background-color: #1565c0;
 }
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #1565c0;
+  outline-offset: 3px;
+}
