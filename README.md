@@ -85,11 +85,11 @@ This application was built with accessibility in mind, including:
 
 ## Future Improvements
 
+- Interactive weather maps
 - Use the user's current location
 - Save favourite cities
-- Search auto-complete suggestions
-- Dark mode
-- Interactive weather maps
+- Auto-complete suggestions when searching
+- Customisable settings of view (e.g. which weather details, unit toggles)
 
 ## Author
 
