@@ -18,16 +18,6 @@ https://weather-dashboard.vercel.app
 - Unit and integration tests
 - API caching with React Query
 
-## Screenshots
-
-### Desktop
-
-*(Add a screenshot here)*
-
-### Mobile
-
-*(Add a screenshot here)*
-
 ## Tech Stack
 
 - React
