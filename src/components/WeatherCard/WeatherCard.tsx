@@ -27,7 +27,7 @@ export default function WeatherCard({ weather }: WeatherCardProps) {
         <img
           className="weather-icon"
           src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-          alt={weather.description}
+          alt={`Current weather: ${weather.description}`}
         />
       </div>
 

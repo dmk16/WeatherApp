@@ -23,13 +23,17 @@ export default function SearchBar({ onSearch, hasError }: SearchBarProps) {
         className={`search-bar ${hasError ? "error" : ""}`}
         onSubmit={handleSearch}
       >
+        <label htmlFor="city-search" className="visually-hidden">
+          Search for a city
+        </label>
         <input
+          id="city-search"
           type="text"
           placeholder="Search for a city..."
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button type="submit" aria-label="Search for weather">Search</button>
       </form>
     </>
   );
