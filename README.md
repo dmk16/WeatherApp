@@ -4,7 +4,7 @@ A responsive weather dashboard built with React, TypeScript and Vite that displa
 
 ## Live Demo
 
-https://weather-dashboard.vercel.app
+https://weather-dashboard-dmk.vercel.app
 
 ## Features
 
@@ -43,12 +43,6 @@ git clone https://github.com/dmk16/WeatherApp.git
 npm install
 ```
 
-### Create a `.env` file
-
-```env
-VITE_OPENWEATHER_API_KEY=your_api_key
-```
-
 ### Start the development server
 
 ```bash
@@ -82,14 +76,6 @@ This application was built with accessibility in mind, including:
 - Screen reader labels
 - Visible focus states
 - Lighthouse Accessibility score: **100**
-
-## Future Improvements
-
-- Interactive weather maps
-- Use the user's current location
-- Save favourite cities
-- Auto-complete suggestions when searching
-- Customisable settings of view (e.g. which weather details, unit toggles)
 
 ## Author
 
